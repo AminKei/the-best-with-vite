@@ -1,0 +1,22 @@
+{
+  "welcome": "سلام",
+  "description": "این یک مثال است.",
+  "company_name": "جیکوب",
+  "home": "خانه",
+  "contact": "تماس",
+  "about": "درباره",
+  "english": "انگلیسی",
+  "spanish": "اسپانیایی",
+  "persian": "فارسی",
+  "light_theme": "روشن",
+  "dark_theme": "تیره",
+  "about_description": "این صفحه درباره است.",
+  "contact_description": "اینجا با ما تماس بگیرید.",
+  "login_signup": "ورود یا ثبت نام",
+  "search": "جستجو",
+  "more": "بیشتر",
+  "not_found": "پیدا نشد",
+  "page_not_found": "صفحه‌ای که به دنبال آن هستید وجود ندارد.",
+  "dark": "تاریک",
+  "light": "روشن"
+}
