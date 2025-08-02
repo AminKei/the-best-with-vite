@@ -6,7 +6,7 @@ const DesktopNav: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="hidden md:flex items-center space-x-6 text-base lg:text-lg font-medium justify-center flex-1 font-vazirmatn">
+    <nav className="hidden lg:flex items-center space-x-6 text-base lg:text-lg font-medium justify-center flex-1 font-vazirmatn">
       <Link
         to="/"
         className="hover:text-blue-600 dark:hover:text-purple-400 transition-colors"

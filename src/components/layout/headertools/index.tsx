@@ -17,7 +17,7 @@ const HeaderTools: React.FC<HeaderToolsProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="hidden sm:flex items-center space-x-3 font-vazirmatn">
+    <div className="hidden xl:flex items-center space-x-3 font-vazirmatn">
       <Input
         type="search"
         placeholder={t("search")}

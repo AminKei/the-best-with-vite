@@ -45,7 +45,7 @@ const Header: React.FC = () => {
             onSearchChange={handleSearchChange}
           />
 
-          <div className="sm:hidden">
+          <div className="xl:hidden">
             <Button
               variant="outline"
               size="md"

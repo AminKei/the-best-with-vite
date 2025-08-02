@@ -4,12 +4,14 @@ interface TypographyProps {
   children: React.ReactNode;
   variant?: "h1" | "h2" | "h3" | "p" | "span";
   className?: string;
+  color?: string;
 }
 
 const Typography: React.FC<TypographyProps> = ({
   children,
   variant = "p",
   className = "",
+  color,
 }) => {
   const variantStyles = {
     h1: "text-4xl font-bold",
@@ -22,7 +24,10 @@ const Typography: React.FC<TypographyProps> = ({
   const Component = variant;
 
   return (
-    <Component className={`${variantStyles[variant]} ${className}`}>
+    <Component
+      className={`${variantStyles[variant]} ${className} ${(color =
+        color)} data-[text-white]:text-white`}
+    >
       {children}
     </Component>
   );
