@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Input from "../../ui/input";
 import LanguageSwitcher from "../../base_components/language_switcher";
 import ThemeSwitcher from "../../base_components/theme_switcher";
 import Button from "../../ui/button";
 import { useTheme } from "../../../contexts/themecontext";
+import { Link } from "react-router-dom";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -78,7 +78,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
           className="w-full mt-2 py-2 text-sm"
           onClick={() => setIsOpen(false)}
         >
-          {t("login_signup")}
+          <Link to={"/login"}> {t("login_signup")}</Link>
         </Button>
       </div>
     </div>

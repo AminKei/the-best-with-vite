@@ -6,6 +6,7 @@ import More from "../../pages/More";
 const Home = lazy(() => import("../../pages/home/index"));
 const About = lazy(() => import("../../pages/about/index"));
 const Contact = lazy(() => import("../../pages/contact/index"));
+const Login = lazy(() => import("../../pages/login/index"));
 const NotFound = lazy(() => import("../../pages/notfound/index"));
 
 export const routes: RouteObject[] = [
@@ -28,6 +29,10 @@ export const routes: RouteObject[] = [
   {
     path: RoutePath.more,
     element: <More />,
+  },
+  {
+    path: RoutePath.auth.login,
+    element: <Login />,
   },
   {
     path: "*",

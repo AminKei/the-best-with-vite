@@ -17,20 +17,21 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   const languages = [
-    { code: "en", label: t("english") },
-    { code: "es", label: t("spanish") },
-    { code: "fa", label: t("persian") },
+    { code: "en", label: t("english"), flag: "🇺🇸" },
+    { code: "es", label: t("spanish"), flag: "🇪🇸" },
+    { code: "fa", label: t("persian"), flag: "🇮🇷" },
   ];
 
   return (
-    <div className="relative inline-block text-left  ">
+    <div className="relative inline-block text-left">
       <Button
         variant="primary"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between   w-36 px-4 py-2.5 h-[43px] rounded-lg shadow-md  focus:outline-none"
+        className="flex items-center justify-between w-36 px-4 gap-3 py-2.5 h-[43px] rounded-lg shadow-md focus:outline-none"
       >
-        <span>
+        <span className="flex items-center ">
+          {languages.find((lang) => lang.code === i18n.language)?.flag}{" "}
           {t(
             languages.find((lang) => lang.code === i18n.language)?.label ||
               "english"
@@ -54,18 +55,20 @@ const LanguageSwitcher: React.FC = () => {
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-white text-blue-600 rounded-lg shadow-lg  ring-opacity-5 z-50">
+        <div className="absolute right-0 mt-2 w-36 bg-white dark:bg-white text-blue-600 rounded-lg shadow-lg ring-opacity-5 z-50 ">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => changeLanguage(lang.code as any)}
               className={`block w-full text-left px-4 py-2 text-sm transition-colors rounded-lg ${
                 i18n.language === lang.code
-                  ? "bg-blue-100 dark:bg-blue-900"
-                  : "hover:bg-gray-100 dark:hover:bg-gray-100"
+                  ? "bg-blue-100 "
+                  : "hover:bg-gray-100 "
               }`}
             >
-              {lang.label}
+              <span className="flex items-center">
+                <span className="mr-2">{lang.flag}</span> {lang.label}
+              </span>
             </button>
           ))}
         </div>

@@ -3,11 +3,12 @@ import {
   MagnifyingGlassIcon,
   UserIcon,
   PencilIcon,
+  NumberedListIcon,
 } from "@heroicons/react/24/outline";
 
 interface InputProps {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   type?: string;
   className?: string;
@@ -28,6 +29,8 @@ const Input: React.FC<InputProps> = ({
         return <MagnifyingGlassIcon className="w-5 h-5 text-gray-400" />;
       case "account":
         return <UserIcon className="w-5 h-5 text-gray-400" />;
+      case "password":
+        return <NumberedListIcon className="w-5 h-5 text-gray-400"/>
       default:
         return <PencilIcon className="w-5 h-5 text-gray-400" />;
     }

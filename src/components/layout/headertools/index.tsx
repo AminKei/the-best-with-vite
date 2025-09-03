@@ -4,6 +4,7 @@ import Input from "../../ui/input";
 import LanguageSwitcher from "../../base_components/language_switcher";
 import ThemeSwitcher from "../../base_components/theme_switcher";
 import Button from "../../ui/button";
+import { Link } from "react-router-dom";
 
 interface HeaderToolsProps {
   searchTerm: string;
@@ -27,7 +28,7 @@ const HeaderTools: React.FC<HeaderToolsProps> = ({
       <LanguageSwitcher />
       <ThemeSwitcher />
       <Button className="px-4 py-2.5 text-sm sm:text-base">
-        {t("login_signup")}
+        <Link to={"/login"}> {t("login_signup")}</Link>
       </Button>
     </div>
   );

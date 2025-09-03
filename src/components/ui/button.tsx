@@ -7,6 +7,7 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   className?: React.ReactNode;
+  loading?: boolean; // added loading prop
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "md",
   disabled = false,
   className,
+  loading = false, // default false
 }) => {
   const baseStyles =
     "font-medium rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200 ";
@@ -39,13 +41,36 @@ const Button: React.FC<ButtonProps> = ({
     <button
       className={`${baseStyles} ${variantStyles[variant]} ${
         sizeStyles[size]
-      } flex items-center justify-center w-full ${
-        disabled ? "opacity-50 cursor-not-allowed" : ""
+      } flex items-center justify-center ${
+        disabled || loading ? "opacity-50 cursor-not-allowed" : ""
       } ${className}`}
       onClick={onClick}
-      disabled={disabled}
+      disabled={disabled || loading} // disable when loading
     >
-      {children}
+      {loading ? (
+        // You can replace this spinner with your preferred loading indicator
+        <svg
+          className="animate-spin -ml-1 mr-3 h-5 w-5 text-current"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.372 0 0 5.372 0 12h4z"
+          ></path>
+        </svg>
+      ) : null}
+      {loading ? null : children}
     </button>
   );
 };

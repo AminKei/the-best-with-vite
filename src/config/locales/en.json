@@ -18,5 +18,8 @@
   "not_found": "Not Found",
   "page_not_found": "The page you are looking for does not exist.",
   "dark": "Dark",
-  "light": "Light"
+  "light": "Light",
+  "back_to_home": "Back to Home",
+  "confirm": "Confirm",
+  "cancel": "Cancel"
 }

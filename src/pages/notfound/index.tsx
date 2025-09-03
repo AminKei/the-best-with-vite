@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../contexts/themecontext";
 import Typography from "../../components/ui/typography";
 import { RoutePath } from "../../constants/routes.path";
+import { ArrowLeftIcon } from "@heroicons/react/24/outline";
+import Button from "../../components/ui/button";
 
 const NotFound: React.FC = () => {
   const { t } = useTranslation();
@@ -18,17 +20,15 @@ const NotFound: React.FC = () => {
       }`}
     >
       <Typography variant="h1" className="text-5xl sm:text-6xl font-bold mb-4">
-        404 - {t("not_found")}
+        {t("not_found")}
       </Typography>
       <Typography variant="p" className="mb-6 text-lg sm:text-xl text-center">
         {t("page_not_found")}
       </Typography>
-      <Link
-        to={RoutePath.basePath}
-        className="px-6 py-3  bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-      >
-        {t("back_to_home")}
-      </Link>
+      <Button className="flex gap-3">
+        <Link to={RoutePath.basePath}>{t("back_to_home")}</Link>
+        <ArrowLeftIcon width={20} />
+      </Button>
     </div>
   );
 };

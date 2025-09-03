@@ -25,8 +25,7 @@ const Typography: React.FC<TypographyProps> = ({
 
   return (
     <Component
-      className={`${variantStyles[variant]} ${className} ${(color =
-        color)} data-[text-white]:text-white`}
+      className={`${variantStyles[variant]} ${className} ${(color = color)}   `}
     >
       {children}
     </Component>

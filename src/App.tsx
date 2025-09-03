@@ -7,6 +7,7 @@ import { routes } from "./config/routes/routes";
 import Loading from "./components/base_components/loading";
 import ProtectedRoute from "./hooks/useProtectedRoute";
 import { RoutePath } from "./constants/routes.path";
+import More from "./pages/More";
 
 const App: React.FC = () => {
   useDirection();
@@ -31,7 +32,9 @@ const App: React.FC = () => {
                   path={route.path}
                   element={
                     isProtected ? (
-                      <ProtectedRoute>{route.element}</ProtectedRoute>
+                      <ProtectedRoute>
+                        <More />
+                      </ProtectedRoute>
                     ) : (
                       route.element
                     )

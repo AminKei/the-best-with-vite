@@ -18,5 +18,8 @@
   "not_found": "No Encontrado",
   "page_not_found": "La página que buscas no existe.",
   "dark": "oscuro",
-  "light": "luz"
+  "light": "luz",
+  "back_to_home": "Reen Hejmen",
+  "confirm": "Confirmar",
+  "cancel": "Cancelar"
 }
